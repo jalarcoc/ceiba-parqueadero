@@ -14,11 +14,19 @@ pipeline{
 		stage('Checkout'){
 			steps{
 			echo "------------>Checkout<------------"
+			checkout([$class: 'GitSCM', branches: [[name: '*/master']],doGenerateSubmoduleConfigurations: false, extensions: [], gitTool:'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId:'GitHub_jalarcoc', url:'https://github.com/jalarcoc/ceiba-parqueadero.git']]])
 			}
 		}
+		stage('Compile'){
+			steps{
+			 sh 'gradle --b ./proyecto1/build.gradle compileJava'
+			}
+		}
+		
 		stage('Unit Tests'){
 			steps{
 				echo"-------------> These are Unit Test !! <------------"
+				sh 'gradle --b ./build.gradle test'
 			}
 		}
 		stage('Integration Test'){
@@ -34,6 +42,7 @@ pipeline{
 		stage('Build'){
 			steps{
 				echo"--------> This is Build !! <----------"
+				sh 'gradle --b ./build.gradle build -x test'
 			}
 		}
 	}
