@@ -37,6 +37,10 @@ pipeline{
 		stage('Static Code Analysis'){
 			steps{
 				echo"-------> This is Static Code Analysis !! <---------"
+				withSonarQubeEnv('Sonar') {
+                   sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+               }
+				
 			}
 		}
 		stage('Build'){
@@ -55,6 +59,8 @@ pipeline{
 		}
 		failure {
 			echo 'This will run only if failed !! :('
+			 mail (to: 'jessica.alarcon@ceiba.com.co', subject: "Failed Pipeline:${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}")
+			}
 		}
 		unstable {
 			echo 'This will run only if the run was marked as unstable !! :S'
