@@ -7,7 +7,7 @@ import dominio.Vehiculo;
 import dominio.excepcion.ParqueoException;
 
 public class ReglaPlaca implements ReglasParqueo {
-	private static final String NO_ESTA_AUTORIZADO_A_INGRESAR = "Solo puede ingresar los días Domingo y Lunes";
+	private static final String NO_ESTA_AUTORIZADO_A_INGRESAR = "Solo puede ingresar los dias Domingo y Lunes";
 	
 	
 	public boolean sePuedeIngresar(){

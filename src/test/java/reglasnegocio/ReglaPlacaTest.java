@@ -22,7 +22,7 @@ public class ReglaPlacaTest {
 		try {
 			reglas.validar(vehiculo, parqueadero);
 		} catch (ParqueoException e) {
-			Assert.assertEquals("Solo puede ingresar los días Domingo y Lunes", e.getMessage());
+			Assert.assertEquals("Solo puede ingresar los dias Domingo y Lunes", e.getMessage());
 		}
 
 	}
