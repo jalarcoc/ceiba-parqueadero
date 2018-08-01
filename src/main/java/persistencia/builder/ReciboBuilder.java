@@ -6,7 +6,7 @@ import dominio.Recibo;
 import dominio.Vehiculo;
 import persistencia.entidad.ReciboEntity;
 
-public class ReciboBuilder {
+public final class ReciboBuilder {
 	
 	private ReciboBuilder(){
 		

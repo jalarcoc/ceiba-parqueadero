@@ -24,20 +24,24 @@ public class RepositorioVehiculoPersistente implements RepositorioVehiculo {
 	public RepositorioVehiculoPersistente(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-	
+
 	@Override
 	public void agregarCarro(Carro carro) {
 		entityManager.persist(VehiculoBuilder.convertirCarroAEntity(carro));
-		
+
 	}
+
 	@Override
 	public void agregarMoto(Moto moto) {
 		entityManager.persist(VehiculoBuilder.convertirMotoAEntity(moto));
 	}
+	
 	@Override
 	public void agregarVehiculo(Vehiculo vehiculo) {
 		entityManager.persist(VehiculoBuilder.convertirVehiculoAEntity(vehiculo));
+	
 	}
+
 	@Override
 	public Vehiculo obtenerVehiculo(String placa) {
 

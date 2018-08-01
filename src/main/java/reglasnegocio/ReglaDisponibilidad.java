@@ -16,22 +16,19 @@ public class ReglaDisponibilidad implements ReglasParqueo {
 	
 	public ReglaDisponibilidad(RepositorioRecibo repositorioRecibo){
 		this.repositorioRecibo = repositorioRecibo;
-	}
+		}
 
 	private long celdasNoDisponibles(Vehiculo vehiculo){
 		return repositorioRecibo.obtenerCantidadDeCeldasOcupadas(vehiculo.getTipo());
 	}
 	@Override
 	public boolean validar(Vehiculo vehiculo, Parqueadero parqueadero) {
-		if(vehiculo instanceof Carro){
-			if(celdasDisponibles(vehiculo,parqueadero)== LIMITE_CELDAS_PARA_PRESTAR){
-				throw new ParqueoException(NO_CAPACIDAD_CARROS);
-			}
+		if(vehiculo instanceof Carro && celdasDisponibles(vehiculo,parqueadero)== LIMITE_CELDAS_PARA_PRESTAR){
+			throw new ParqueoException(NO_CAPACIDAD_CARROS);
 		}
-		if(vehiculo instanceof Moto){
-			if(celdasDisponibles(vehiculo, parqueadero) == LIMITE_CELDAS_PARA_PRESTAR){
-				throw new ParqueoException(NO_CAPACIDAD_MOTOS);
-			}
+		if(vehiculo instanceof Moto && celdasDisponibles(vehiculo, parqueadero) == LIMITE_CELDAS_PARA_PRESTAR){
+			throw new ParqueoException(NO_CAPACIDAD_MOTOS);
+			
 		}
 		return true;
 	}

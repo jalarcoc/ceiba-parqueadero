@@ -5,7 +5,7 @@ import dominio.Moto;
 import dominio.Vehiculo;
 import persistencia.entidad.VehiculoEntity;
 
-public class VehiculoBuilder {
+public final class VehiculoBuilder {
 	
 	private VehiculoBuilder(){
 		

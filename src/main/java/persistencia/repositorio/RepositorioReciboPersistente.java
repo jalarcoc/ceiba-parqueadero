@@ -51,9 +51,7 @@ public class RepositorioReciboPersistente implements RepositorioRecibo {
 		if (reciboEntity != null) {
 			recibo = ReciboBuilder.convertirADominio(reciboEntity);
 		}
-
 		return recibo;
-
 	}
 
 	@SuppressWarnings("rawtypes")
@@ -62,7 +60,6 @@ public class RepositorioReciboPersistente implements RepositorioRecibo {
 		query.setParameter(PLACA, placa);
 		List resultList = query.getResultList();
 		return !resultList.isEmpty() ? (ReciboEntity) resultList.get(0) : null;
-
 	}
 
 	@Override
@@ -70,7 +67,6 @@ public class RepositorioReciboPersistente implements RepositorioRecibo {
 		Query query = entityManager.createNamedQuery(RECIBOS_ACTIVOS);
 		query.setParameter(TIPO, tipo);
 		return (Long) query.getSingleResult();
-
 	}
 
 	public void actualizarRecibo(String placa, Calendar fechaSalida, int total) {
@@ -79,7 +75,6 @@ public class RepositorioReciboPersistente implements RepositorioRecibo {
 			reciboentity.setFechaDeSalida(fechaSalida);
 			reciboentity.setTotal(total);
 		}
-
 	}
 
 	@Override
@@ -98,11 +93,7 @@ public class RepositorioReciboPersistente implements RepositorioRecibo {
 	private List<ReciboEntity> listarRecibos() {
 		Query query= entityManager.createNamedQuery(TOTAL_DE_VEHICULOS_ACTIVOS);
 		List resultList = query.getResultList();
-		if(!resultList.isEmpty()){
-			return resultList;
-		}else{
-			return null;
-		}
+		return !resultList.isEmpty() ? resultList : null;
 	}
 
 }

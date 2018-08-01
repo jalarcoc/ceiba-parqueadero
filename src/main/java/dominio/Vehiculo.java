@@ -8,6 +8,7 @@ public abstract class Vehiculo {
 		return placa;
 	}
 	public String getTipo() {
-		return tipo;	}
+		return tipo;	
+		}
 		
 }

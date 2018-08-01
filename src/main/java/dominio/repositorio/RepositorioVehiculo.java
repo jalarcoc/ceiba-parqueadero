@@ -5,10 +5,11 @@ import dominio.Moto;
 import dominio.Vehiculo;
 
 public interface RepositorioVehiculo {
-
+	
 	public void agregarCarro(Carro carro);
 	public void agregarMoto(Moto moto);
 	public Vehiculo obtenerVehiculo(String placa);
-	public void agregarVehiculo(Vehiculo vehiculo);
+	
+	void agregarVehiculo(Vehiculo vehiculo);
 
 }
