@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dominio.unitaria.ReciboTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-08-01T20:27:25" hostname="JESSICA-ALARCON" time="0.649">
+  <properties/>
+  <testcase name="crearReciboSalida" classname="dominio.unitaria.ReciboTest" time="0.647"/>
+  <testcase name="crearReciboIngreso" classname="dominio.unitaria.ReciboTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
