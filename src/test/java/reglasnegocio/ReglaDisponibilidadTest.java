@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import com.example.ceibaparqueadero.*;
 
-import com.example.ceibaparqueadero.CeibaparqueaderoApplication;
 
 import dominio.Carro;
 import dominio.Moto;
@@ -19,7 +19,7 @@ import dominio.Vehiculo;
 import dominio.excepcion.ParqueoException;
 import dominio.repositorio.RepositorioRecibo;
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes={CeibaparqueaderoApplication.class})
+@SpringBootTest(classes={CeibaParqueaderoApplication.class})
 @DataJpaTest
 public class ReglaDisponibilidadTest {
 	@Autowired

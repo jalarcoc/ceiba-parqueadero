@@ -8,8 +8,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
-import com.example.ceibaparqueadero.CeibaparqueaderoApplication;
+import com.example.ceibaparqueadero.CeibaParqueaderoApplication;
 
 import dominio.Carro;
 import dominio.Recibo;
@@ -17,7 +16,7 @@ import dominio.Moto;
 import dominio.Vehiculo;
 import dominio.Vigilante;
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes={CeibaparqueaderoApplication.class})
+@SpringBootTest(classes={CeibaParqueaderoApplication.class})
 @DataJpaTest
 public class VigilanteTest {
 

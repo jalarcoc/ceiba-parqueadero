@@ -1,4 +1,4 @@
-package com.example.ceibaParqueadero;
+package com.example.ceibaparqueadero;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
