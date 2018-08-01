@@ -1,5 +1,6 @@
 package com.example.ceibaparqueadero;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,6 @@ import dominio.Parqueadero;
 import dominio.Vigilante;
 import dominio.repositorio.RepositorioRecibo;
 import dominio.repositorio.RepositorioVehiculo;
-
 import reglasnegocio.ReglaDisponibilidad;
 import reglasnegocio.ReglaPlaca;
 
@@ -40,6 +40,7 @@ public class ConfiguracionVigilante {
 		reglasParqueo.add(new ReglaPlaca());
 		return reglasParqueo;
 	}
+
 	 @Bean
 	    public CorsFilter corsFilter() {
 	        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

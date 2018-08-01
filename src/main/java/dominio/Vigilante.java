@@ -6,7 +6,6 @@ import java.util.List;
 import dominio.excepcion.ParqueoException;
 import dominio.repositorio.RepositorioRecibo;
 import dominio.repositorio.RepositorioVehiculo;
-
 import reglasnegocio.ReglasParqueo;
 
 public class Vigilante {
@@ -24,12 +23,11 @@ public class Vigilante {
 		this.reglasParqueo = reglasParqueo;
 		this.repositorioVehiculo = repositorioVehiculo;
 		this.repositorioRecibo = repositorioRecibo;
-
 	}
 
 	public Recibo validarIngresoVehiculo(Vehiculo vehiculo) {
 		validarReglasDeIngreso(vehiculo);
-		elVehivuloYaHabiaIngreado(vehiculo);
+		elVehiculoYaHabiaIngresado(vehiculo);
 		if (!validarSiElVehiculoDebeUnRecibo(vehiculo.getPlaca())) {
 			Recibo recibo = new Recibo(vehiculo, Calendar.getInstance());
 			repositorioRecibo.agregarRecibo(recibo);
@@ -38,7 +36,7 @@ public class Vigilante {
 		throw new ParqueoException(NO_PUEDE_INGRESAR);
 
 	}
-	public void elVehivuloYaHabiaIngreado(Vehiculo vehiculo) {
+	public void elVehiculoYaHabiaIngresado(Vehiculo vehiculo) {
 		if (!existeVehiculo(vehiculo.getPlaca())) {
 			repositorioVehiculo.agregarVehiculo(vehiculo);
 		}
