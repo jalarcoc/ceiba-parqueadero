@@ -8,7 +8,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.example.ceibaparqueadero.CeibaParqueaderoApplication;
+import com.example.ceibaParqueadero.CeibaParqueaderoApplication;
 
 import dominio.Carro;
 import dominio.Recibo;

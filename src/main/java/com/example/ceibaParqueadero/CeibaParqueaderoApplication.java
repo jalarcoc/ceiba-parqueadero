@@ -1,4 +1,4 @@
-package com.example.ceibaparqueadero;
+package com.example.ceibaParqueadero;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
