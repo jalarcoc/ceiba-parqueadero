@@ -5,9 +5,10 @@ import java.util.Calendar;
 import org.junit.Assert;
 import org.junit.Test;
 
-import dominio.Carro;
-import dominio.Recibo;
-import dominio.Vehiculo;
+import com.example.ceibaParqueadero.dominio.Carro;
+import com.example.ceibaParqueadero.dominio.Recibo;
+import com.example.ceibaParqueadero.dominio.Vehiculo;
+
 import static org.mockito.Mockito.mock;
 
 

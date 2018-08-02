@@ -6,6 +6,8 @@ import java.util.Calendar;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.example.ceibaParqueadero.dominio.logica.CalcularCobro;
+
 public class CalcularCobroTest {
 
 	private CalcularCobro calcularCobro = new CalcularCobro();

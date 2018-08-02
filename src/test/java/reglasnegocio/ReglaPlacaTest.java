@@ -2,12 +2,15 @@ package reglasnegocio;
 
 import org.junit.Assert;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
-import dominio.Carro;
-import dominio.Parqueadero;
-import dominio.Vehiculo;
-import dominio.excepcion.ParqueoException;
+import com.example.ceibaParqueadero.dominio.Carro;
+import com.example.ceibaParqueadero.dominio.Parqueadero;
+import com.example.ceibaParqueadero.dominio.Vehiculo;
+import com.example.ceibaParqueadero.dominio.excepcion.ParqueoException;
+import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaPlaca;
+import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglasParqueo;
+
+import static org.mockito.Mockito.*;
 
 public class ReglaPlacaTest {
 	Vehiculo vehiculo;

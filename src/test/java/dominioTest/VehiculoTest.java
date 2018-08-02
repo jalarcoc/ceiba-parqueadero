@@ -7,9 +7,9 @@ package dominioTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import dominio.Carro;
-import dominio.Moto;
-import dominio.Vehiculo;
+import com.example.ceibaParqueadero.dominio.Carro;
+import com.example.ceibaParqueadero.dominio.Moto;
+import com.example.ceibaParqueadero.dominio.Vehiculo;
 
 /**
  * @author jessica.alarcon
