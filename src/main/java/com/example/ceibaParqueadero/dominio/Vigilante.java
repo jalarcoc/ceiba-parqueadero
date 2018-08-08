@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 import com.example.ceibaParqueadero.dominio.excepcion.ParqueoException;
@@ -15,11 +16,12 @@ import com.example.ceibaParqueadero.persistencia.builder.ReciboBuilder;
 import com.example.ceibaParqueadero.persistencia.builder.VehiculoBuilder;
 import com.example.ceibaParqueadero.persistencia.entidad.ReciboEntity;
 import com.example.ceibaParqueadero.persistencia.entidad.VehiculoEntity;
+@Import(VigilanteRest.class)
 @Component
 public class Vigilante {
 
-	private RepositorioVehiculo repositorioVehiculo;
 	private RepositorioRecibo repositorioRecibo;
+	private RepositorioVehiculo repositorioVehiculo;
 	private Parqueadero parqueadero;
 	private List<ReglasParqueo> reglasParqueo;
 	private List<ReglasCobro> reglasCobro;
