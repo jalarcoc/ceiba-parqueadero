@@ -1,5 +1,7 @@
 package com.example.ceibaParqueadero.dominio;
 
+
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -19,7 +21,7 @@ import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 @RequestMapping(value = "/parqueadero")
 @EnableAutoConfiguration
 public class VigilanteRest {
-
+  
 	@Autowired
 	Vigilante vigilante;
 	@Autowired
@@ -43,5 +45,9 @@ public class VigilanteRest {
 		Vehiculo vehiculo = moto;
 		return vigilante.validarIngresoVehiculo(vehiculo);
 	}
-
+	@RequestMapping(value = "/listar/vehiculos", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Recibo> servicioListarVehiculos() {
+		return vigilante.obtenerListaDeRecibos() ;
+	}
 }

@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class Recibo {
 	private Vehiculo vehiculo;
 	private Calendar fechaIngreso;
-	private Calendar fechaSalida;
+	private Calendar fechaDeSalida;
 	private double total;
 	public Vehiculo getVehiculo() {
 		return vehiculo;
@@ -19,11 +19,11 @@ public class Recibo {
 	public void setFechaIngreso(Calendar fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
-	public Calendar getFechaSalida() {
-		return fechaSalida;
+	public Calendar getFechaDeSalida() {
+		return fechaDeSalida;
 	}
-	public void setFechaSalida(Calendar fechaSalida) {
-		this.fechaSalida = fechaSalida;
+	public void setFechaDeSalida(Calendar fechaDeSalida) {
+		this.fechaDeSalida = fechaDeSalida;
 	}
 	public double getTotal() {
 		return total;
@@ -38,11 +38,11 @@ public class Recibo {
 		this.fechaIngreso = fechaIngreso;
 
 	}
-	public Recibo(Vehiculo vehiculo, Calendar fechaIngreso, Calendar fechaSalida, double total) {
+	public Recibo(Vehiculo vehiculo, Calendar fechaIngreso, Calendar fechaDeSalida, double total) {
 		super();
 		this.vehiculo = vehiculo;
 		this.fechaIngreso = fechaIngreso;
-		this.fechaSalida = fechaSalida;
+		this.fechaDeSalida = fechaDeSalida;
 		this.total = total;
 	}
 	

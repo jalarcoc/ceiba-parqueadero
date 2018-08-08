@@ -1,4 +1,4 @@
-package dominio.logica;
+package com.example.ceibaParqueadero.dominio.logica;
 
 
 import java.util.Calendar;

@@ -7,12 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
+import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaCobroCarro;
+import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaCobroMoto;
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaDisponibilidad;
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaPlaca;
+import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglasCobro;
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglasParqueo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
@@ -27,20 +27,28 @@ public class VigilanteController {
 	
 
 	@Bean
-	public Vigilante crearVigilante(){
-		return new Vigilante(crearParqueadero(), anadirReglasParcqueo(repositorioRecibo),repositorioVehiculo,repositorioRecibo);
+	public Vigilante crearVigilante(RepositorioVehiculo repositorioVehiculo,RepositorioRecibo repositorioRecibo ){
+		return new Vigilante(crearParqueadero(), anadirReglasParcqueo(repositorioRecibo),repositorioVehiculo,repositorioRecibo,anadirReglasCobro());
 	}
-	
+	@Bean
 	public Parqueadero crearParqueadero(){
 		int celdaCarros=20;
 		int celdaMotos=10;
 		return new Parqueadero(celdaCarros,celdaMotos);
 	}
-	
-	private List<ReglasParqueo> anadirReglasParcqueo(RepositorioRecibo repositorioRecibo) {
+	@Bean
+	public List<ReglasParqueo> anadirReglasParcqueo(RepositorioRecibo repositorioRecibo) {
 		List<ReglasParqueo> reglasParqueo=new ArrayList<>();
 		reglasParqueo.add(new ReglaDisponibilidad(repositorioRecibo));
 		reglasParqueo.add(new ReglaPlaca());
 		return reglasParqueo;
-	}	
+	}
+	@Bean
+	public List<ReglasCobro> anadirReglasCobro() {
+		List<ReglasCobro> reglasCobro=new ArrayList<>();
+		reglasCobro.add(new ReglaCobroCarro());
+		reglasCobro.add(new ReglaCobroMoto());
+		return reglasCobro;
+	}
+
 }

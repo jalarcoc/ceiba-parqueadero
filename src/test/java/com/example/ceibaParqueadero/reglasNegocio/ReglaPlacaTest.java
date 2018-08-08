@@ -1,4 +1,4 @@
-package reglasnegocio;
+package com.example.ceibaParqueadero.reglasNegocio;
 
 import org.junit.Assert;
 import org.junit.Test;

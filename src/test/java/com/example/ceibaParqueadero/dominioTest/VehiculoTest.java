@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dominioTest;
+package com.example.ceibaParqueadero.dominioTest;
 
 
 import org.junit.Assert;

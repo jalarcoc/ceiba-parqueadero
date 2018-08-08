@@ -17,9 +17,9 @@ public class ReglaDisponibilidad implements ReglasParqueo {
 	public ReglaDisponibilidad(RepositorioRecibo repositorioRecibo){
 		this.repositorioRecibo = repositorioRecibo;
 		}
-
+  
 	private long celdasNoDisponibles(Vehiculo vehiculo){
-		return 0;
+		return repositorioRecibo.obtenerCantidadDeCeldasOcupadas(vehiculo.getTipo()); 
 	}
 	@Override
 	public boolean validar(Vehiculo vehiculo, Parqueadero parqueadero) {

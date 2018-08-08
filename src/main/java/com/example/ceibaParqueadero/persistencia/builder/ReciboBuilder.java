@@ -14,7 +14,7 @@ public final class ReciboBuilder {
 	public static ReciboEntity convertirReciboAEntity(Recibo recibo){
 		ReciboEntity reciboEntity = new ReciboEntity();
 		reciboEntity.setFechaDeIngreso(recibo.getFechaIngreso());
-		reciboEntity.setFechaDeSalida(recibo.getFechaSalida());
+		reciboEntity.setFechaDeSalida(recibo.getFechaDeSalida());
 		reciboEntity.setTotal(recibo.getTotal());
 		
 		if(recibo.getVehiculo() instanceof Carro){
@@ -33,4 +33,4 @@ public final class ReciboBuilder {
 		return new Recibo(vehiculo, reciboEntity.getFechaDeIngreso());
 	}
 
-}
+} 

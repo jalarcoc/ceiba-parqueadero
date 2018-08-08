@@ -1,4 +1,4 @@
-package dominioTest;
+package com.example.ceibaParqueadero.dominioTest;
 
 import java.util.Calendar;
 
