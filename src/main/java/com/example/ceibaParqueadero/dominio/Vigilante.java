@@ -16,7 +16,7 @@ import com.example.ceibaParqueadero.persistencia.builder.ReciboBuilder;
 import com.example.ceibaParqueadero.persistencia.builder.VehiculoBuilder;
 import com.example.ceibaParqueadero.persistencia.entidad.ReciboEntity;
 import com.example.ceibaParqueadero.persistencia.entidad.VehiculoEntity;
-@Import(VigilanteRest.class)
+
 @Component
 public class Vigilante {
 

@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.ceibaParqueadero.dominio.Carro;
@@ -13,9 +14,10 @@ import com.example.ceibaParqueadero.dominio.Moto;
 import com.example.ceibaParqueadero.dominio.Recibo;
 import com.example.ceibaParqueadero.dominio.Vehiculo;
 import com.example.ceibaParqueadero.dominio.Vigilante;
+import com.example.ceibaParqueadero.dominio.VigilanteRest;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
-
+@Import(VigilanteRest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class VigilanteTest {
