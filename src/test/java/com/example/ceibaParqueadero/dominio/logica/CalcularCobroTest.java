@@ -21,7 +21,7 @@ public class CalcularCobroTest {
 		Assert.assertEquals(calcularCobro.calcular(fechaIngreso, fechaSalida, 2000, 1000), 1000);
 	}
 	
-	@Test
+	@Test 
 	public void calcularCobroTestMenosDeUnaHora(){
 		fechaIngreso=CrearFecha.crear(2018,8, 01, 6,25);
 		fechaSalida=CrearFecha.crear(2018,8, 01, 7,24);

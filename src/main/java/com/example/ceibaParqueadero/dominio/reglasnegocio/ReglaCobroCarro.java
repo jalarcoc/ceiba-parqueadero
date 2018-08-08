@@ -20,3 +20,4 @@ public class ReglaCobroCarro implements ReglasCobro{
 		return COBROPARACARRO;
 	}
 }
+ 

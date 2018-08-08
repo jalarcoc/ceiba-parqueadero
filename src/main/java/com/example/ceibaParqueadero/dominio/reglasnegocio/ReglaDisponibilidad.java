@@ -21,7 +21,7 @@ public class ReglaDisponibilidad implements ReglasParqueo {
 	private long celdasNoDisponibles(Vehiculo vehiculo){
 		return repositorioRecibo.obtenerCantidadDeCeldasOcupadas(vehiculo.getTipo()); 
 	}
-	@Override
+	@Override 
 	public boolean validar(Vehiculo vehiculo, Parqueadero parqueadero) {
 		if(vehiculo instanceof Carro && celdasDisponibles(vehiculo,parqueadero)== LIMITE_CELDAS_PARA_PRESTAR){
 			throw new ParqueoException(NO_CAPACIDAD_CARROS);

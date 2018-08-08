@@ -23,7 +23,7 @@ public class ReglaCobroMoto implements ReglasCobro {
 		}
 		return calcularCobro.calcular(recibo.getFechaIngreso(), fechaDeSalida, VALORDIA, VALORHORA);
 	}
-	@Override
+	@Override 
 	public String tipoDeCobro() {
 		return COBROPARAMOTO;
 	}

@@ -23,6 +23,6 @@ public class ReglaPlaca implements ReglasParqueo {
 		}
 		return true;
 	}
-	
+	 
 
 }

@@ -17,7 +17,7 @@ public class VehiculoEntity {
 	private String placa;
 	@Column(nullable = false)
 	private String tipo;
-	@Column
+	@Column 
 	private int cilindraje;
 	
 	

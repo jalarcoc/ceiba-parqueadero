@@ -10,7 +10,7 @@ public class CalcularDiferenciaEntreFechas {
 	public long calcular(Calendar fechaDeIngreso, Calendar fechaDeSalida) {
 		convertirHorasAMilisegundos(fechaDeIngreso, fechaDeSalida);
 		return diferenciaEntreFechas();
-
+ 
 	}
 
 	private long diferenciaEntreFechas() {

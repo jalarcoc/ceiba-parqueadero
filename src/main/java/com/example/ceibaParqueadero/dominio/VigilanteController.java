@@ -24,7 +24,7 @@ public class VigilanteController {
 	RepositorioRecibo repositorioRecibo ;
 	@Autowired
 	RepositorioVehiculo repositorioVehiculo;
-	
+	 
 
 	@Bean
 	public Vigilante crearVigilante(RepositorioVehiculo repositorioVehiculo,RepositorioRecibo repositorioRecibo ){

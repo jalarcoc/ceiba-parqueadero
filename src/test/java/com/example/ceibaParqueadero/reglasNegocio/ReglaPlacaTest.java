@@ -23,7 +23,7 @@ public class ReglaPlacaTest {
 		ReglaPlaca reglaPlaca = mock(ReglaPlaca.class);
 		when(reglaPlaca.sePuedeIngresar()).thenReturn(true);
 		try {
-			reglas.validar(vehiculo, parqueadero);
+			reglas.validar(vehiculo, parqueadero); 
 		} catch (ParqueoException e) {
 			Assert.assertEquals("Solo puede ingresar los dias Domingo y Lunes", e.getMessage());
 		}

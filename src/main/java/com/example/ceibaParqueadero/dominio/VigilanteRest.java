@@ -27,7 +27,7 @@ public class VigilanteRest {
 	@Autowired
 	RepositorioRecibo repositorioRecibo ;
 
-	@RequestMapping("/")
+	@RequestMapping("/") 
 	public String home() {
 		return "vigilante";
 	}

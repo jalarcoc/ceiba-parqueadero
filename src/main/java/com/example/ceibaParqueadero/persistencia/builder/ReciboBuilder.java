@@ -20,7 +20,7 @@ public final class ReciboBuilder {
 		if(recibo.getVehiculo() instanceof Carro){
 			Carro carro = (Carro) recibo.getVehiculo();
 			reciboEntity.setVehiculoEntity(VehiculoBuilder.convertirCarroAEntity(carro));
-		}
+		} 
 		if(recibo.getVehiculo() instanceof Moto){
 			Moto moto = (Moto) recibo.getVehiculo();
 			reciboEntity.setVehiculoEntity(VehiculoBuilder.convertirMotoAEntity(moto));

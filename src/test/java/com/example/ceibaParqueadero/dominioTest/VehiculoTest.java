@@ -25,7 +25,7 @@ public class VehiculoTest {
 		
 		Assert.assertNotNull(vehiculo);
 	}
-	@Test
+	@Test 
 	public void recibirUnaMotoTest(){
 
 		vehiculo=new Moto("ZZP35D",150);

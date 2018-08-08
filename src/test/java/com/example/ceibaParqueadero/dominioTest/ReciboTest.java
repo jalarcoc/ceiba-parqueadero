@@ -27,7 +27,7 @@ public class ReciboTest {
 
 	@Test
 	public void crearReciboSalida() {
-		
+		 
 		vehiculo = mock(Vehiculo.class);
 		vehiculo = new Carro("CSR013");
 		

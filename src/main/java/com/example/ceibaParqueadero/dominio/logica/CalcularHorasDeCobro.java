@@ -7,3 +7,4 @@ public class CalcularHorasDeCobro {
 		return (int) (tiempoDeEStadia%HORAS_QUE_EQUIVALEN_A_UN_DIA);
 	}
 }
+ 

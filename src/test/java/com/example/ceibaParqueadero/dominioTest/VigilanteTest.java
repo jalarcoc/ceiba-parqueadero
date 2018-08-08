@@ -20,7 +20,7 @@ import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
 @Import(VigilanteRest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class VigilanteTest {
+public class VigilanteTest { 
 	
 	@Autowired
 	Vigilante vigilante;

@@ -11,7 +11,7 @@ public class Recibo {
 		return vehiculo;
 	}
 	public void setVehiculo(Vehiculo vehiculo) {
-		this.vehiculo = vehiculo;
+		this.vehiculo = vehiculo; 
 	}
 	public Calendar getFechaIngreso() {
 		return fechaIngreso;

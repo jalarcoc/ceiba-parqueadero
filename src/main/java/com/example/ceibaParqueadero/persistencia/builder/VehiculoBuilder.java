@@ -20,7 +20,7 @@ public final class VehiculoBuilder {
 				vehiculo = new Moto(vehiculoEntity.getPlaca(), vehiculoEntity.getCilindraje());
 			}
 		}
-		return vehiculo;
+		return vehiculo; 
 	}
 	public static VehiculoEntity convertirCarroAEntity(Carro carro) {
 		VehiculoEntity vehiculoEntity = new VehiculoEntity();

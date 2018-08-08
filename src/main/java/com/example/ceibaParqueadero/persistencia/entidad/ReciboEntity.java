@@ -21,7 +21,7 @@ public class ReciboEntity {
 	@Column
 	private Calendar fechaDeSalida;
 	@Column
-	private double total;
+	private double total; 
 
 	public Calendar getFechaDeIngreso() {
 		return fechaDeIngreso;

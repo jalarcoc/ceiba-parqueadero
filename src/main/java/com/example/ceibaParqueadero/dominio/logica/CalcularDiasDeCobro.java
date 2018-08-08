@@ -7,3 +7,4 @@ private static final int  HORAS_QUE_EQUIVALEN_A_UN_DIA =9;
 		return (int) (tiempoDeEStadia/HORAS_QUE_EQUIVALEN_A_UN_DIA);
 	}
 }
+ 

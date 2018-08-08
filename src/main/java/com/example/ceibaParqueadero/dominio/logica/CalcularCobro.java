@@ -16,7 +16,7 @@ public class CalcularCobro {
 		calcularHorasDeCobro();
 		return(diasDeCobro*valorDias)+(horasDeCobro*valorHoras); 
 	}
-
+ 
 	private void calcularHorasDeCobro() {
 		horasDeCobro=calcularHorasDeCobro.calcular(tiempoDeEStadia);
 	}

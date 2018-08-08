@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 import com.example.ceibaParqueadero.dominio.excepcion.ParqueoException;
@@ -29,7 +28,7 @@ public class Vigilante {
 	private static final String ESTE_VEHICULO_NO_ESTA = "este vehiculo no esta en el sistema";
 	private static final String NO_SE_TIENE_COMO_COBRAR = "este vehiculo no es soportado por el sistema";
 	private static final String EL_PARQUEADERO_ESTA_VACIO = "el parqueadero esta vacio";
-
+ 
 
 	public Vigilante(Parqueadero parqueadero, List<ReglasParqueo> reglasParqueo,
 			RepositorioVehiculo repositorioVehiculo, RepositorioRecibo repositorioRecibo,
