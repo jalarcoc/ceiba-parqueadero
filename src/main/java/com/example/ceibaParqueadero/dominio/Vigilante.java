@@ -103,22 +103,16 @@ public class Vigilante {
 			regla.validar(vehiculo, parqueadero);
 		}
 	}
-
 	public boolean existeVehiculo(String placa) {
 		List<VehiculoEntity> vehiculos = repositorioVehiculo.findByPlaca(placa);
 		return  vehiculos != null && !vehiculos.isEmpty();
 	}
-
 	public boolean validarSiElVehiculoDebeUnRecibo(String placa) {
 		return repositorioRecibo.obtenerReciboEntity(placa) != null;
 	}
-	
-	public Iterable<VehiculoEntity> obtenerVehiculos(){
-		return repositorioVehiculo.findAll();
-		
-	}
+
 	public List<Recibo> obtenerListaDeRecibos(){
-		List<ReciboEntity> listaEntity = repositorioRecibo.findAll();
+		List<ReciboEntity> listaEntity = repositorioRecibo.listarRecibos();
 		if(listaEntity!=null){
 			List<Recibo> listaRecibos = new ArrayList<>();
 			for(ReciboEntity reciboEntity : listaEntity){
@@ -128,6 +122,7 @@ public class Vigilante {
 		}
 		throw new ParqueoException(EL_PARQUEADERO_ESTA_VACIO);
 	}
+
 }
 	 
 

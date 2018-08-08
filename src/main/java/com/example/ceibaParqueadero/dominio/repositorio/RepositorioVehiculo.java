@@ -2,6 +2,8 @@ package com.example.ceibaParqueadero.dominio.repositorio;
 
 
 
+
+
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;

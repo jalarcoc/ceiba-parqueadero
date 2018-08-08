@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.ceibaParqueadero.dominio.logica.SalidaDeVehiculos;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 
 @RestController
@@ -49,5 +50,10 @@ public class VigilanteRest {
 	@ResponseBody
 	public List<Recibo> servicioListarVehiculos() {
 		return vigilante.obtenerListaDeRecibos() ;
+	}
+	@RequestMapping(value = "/cobro/vehiculo", method = RequestMethod.POST)
+	@ResponseBody
+	public Recibo servicioCobrarVehiculo(@RequestBody SalidaDeVehiculos placa) {
+		return vigilante.darSalidaVehiculo(placa.getPlaca());
 	}
 }
