@@ -1,6 +1,8 @@
 package com.example.ceibaParqueadero.dominio.reglasnegocio;
 
 
+import org.springframework.stereotype.Component;
+
 import com.example.ceibaParqueadero.dominio.Carro;
 import com.example.ceibaParqueadero.dominio.Moto;
 import com.example.ceibaParqueadero.dominio.Parqueadero;
@@ -8,6 +10,7 @@ import com.example.ceibaParqueadero.dominio.Vehiculo;
 import com.example.ceibaParqueadero.dominio.excepcion.ParqueoException;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 
+@Component
 public class ReglaDisponibilidad implements ReglasParqueo {
 	private static final int LIMITE_CELDAS_PARA_PRESTAR = 0;
 	private static final String NO_CAPACIDAD_CARROS = "No hay capacidad para mas carros";

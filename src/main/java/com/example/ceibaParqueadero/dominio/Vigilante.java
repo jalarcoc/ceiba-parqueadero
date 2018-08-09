@@ -12,7 +12,6 @@ import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglasParqueo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
 import com.example.ceibaParqueadero.persistencia.builder.ReciboBuilder;
-import com.example.ceibaParqueadero.persistencia.builder.VehiculoBuilder;
 import com.example.ceibaParqueadero.persistencia.entidad.ReciboEntity;
 import com.example.ceibaParqueadero.persistencia.entidad.VehiculoEntity;
 
@@ -40,7 +39,6 @@ public class Vigilante {
 		this.reglasCobro = reglasCobro;
 	}
 
-
 	public Recibo validarIngresoVehiculo(Vehiculo vehiculo) {
 		validarReglasDeIngreso(vehiculo);
 		elVehiculoYaHabiaIngresado(vehiculo);
@@ -50,9 +48,8 @@ public class Vigilante {
 			return recibo;
 		}
 		throw new ParqueoException(NO_PUEDE_INGRESAR);
-
-
 	}
+	
 	public Recibo darSalidaVehiculo(String placa) {
 		Recibo recibo = obtenerReciboDeEntrada(placa);
 		Calendar fechaDeSalida = Calendar.getInstance();
@@ -63,18 +60,17 @@ public class Vigilante {
 		recibo.setTotal(valorACobrar);
 		guardarReciboDeSalida(placa, fechaDeSalida, valorACobrar);
 		return recibo;
-
 	}
+	
 	private void guardarReciboDeSalida(String placa, Calendar fechaDeSalida, int valorACobrar) {
 		ReciboEntity reciboEntity = repositorioRecibo.obtenerReciboEntity(placa);
-		Recibo recibo = ReciboBuilder.convertirADominio(reciboEntity);
-		if(recibo != null){
-			recibo.setFechaDeSalida(fechaDeSalida);
-			recibo.setTotal(valorACobrar);
-			repositorioRecibo.save(ReciboBuilder.convertirReciboAEntity(recibo));
+		if(reciboEntity != null){
+			reciboEntity.setFechaDeSalida(fechaDeSalida);
+			reciboEntity.setTotal(valorACobrar);
+			repositorioRecibo.save(reciboEntity);
 		}
-
 	}
+	
 	private ReglasCobro seleccionarRegla(Vehiculo vehiculo) {
 		for (ReglasCobro regla : reglasCobro) {
 			if (regla.tipoDeCobro().equals(vehiculo.getTipo())) {
@@ -83,19 +79,18 @@ public class Vigilante {
 		}
 		throw new ParqueoException(NO_SE_TIENE_COMO_COBRAR);
 	}
+	
 	private Recibo obtenerReciboDeEntrada(String placa) {
 		ReciboEntity reciboEntity= repositorioRecibo.obtenerReciboEntity(placa);
 		Recibo recibo = ReciboBuilder.convertirADominio(reciboEntity);
 		if(recibo !=null){ 
 			return recibo;
 		}
-		throw new ParqueoException(ESTE_VEHICULO_NO_ESTA);
-		
+		throw new ParqueoException(ESTE_VEHICULO_NO_ESTA);	
 	}
-	public void elVehiculoYaHabiaIngresado(Vehiculo vehiculo) {
-		if (!existeVehiculo(vehiculo.getPlaca())) {
-			repositorioVehiculo.save(VehiculoBuilder.convertirVehiculoAEntity(vehiculo));
-		}
+	
+	public boolean elVehiculoYaHabiaIngresado(Vehiculo vehiculo) {
+		return existeVehiculo(vehiculo.getPlaca());
 	}
 
 	public void validarReglasDeIngreso(Vehiculo vehiculo) { 
@@ -103,10 +98,12 @@ public class Vigilante {
 			regla.validar(vehiculo, parqueadero);
 		}
 	}
+	
 	public boolean existeVehiculo(String placa) {
 		List<VehiculoEntity> vehiculos = repositorioVehiculo.findByPlaca(placa);
 		return  vehiculos != null && !vehiculos.isEmpty();
 	}
+	
 	public boolean validarSiElVehiculoDebeUnRecibo(String placa) {
 		return repositorioRecibo.obtenerReciboEntity(placa) != null;
 	}
@@ -122,7 +119,6 @@ public class Vigilante {
 		}
 		throw new ParqueoException(EL_PARQUEADERO_ESTA_VACIO);
 	}
-
 }
 	 
 

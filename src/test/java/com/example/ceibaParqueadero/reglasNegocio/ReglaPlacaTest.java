@@ -17,7 +17,7 @@ public class ReglaPlacaTest {
 	ReglasParqueo reglas = new ReglaPlaca();
 	Parqueadero parqueadero;
 
-	@Test
+	@Test 
 	public void PlacaEsAYNoEsDiaHabil() {
 		vehiculo = new Carro("ASR013");
 		ReglaPlaca reglaPlaca = mock(ReglaPlaca.class);
