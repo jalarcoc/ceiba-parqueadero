@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.example.ceibaParqueadero.persistencia.entidad.ReciboEntity;
 
+
 public interface RepositorioRecibo extends CrudRepository<ReciboEntity,Long> {
 	
 	//Recibos por placa

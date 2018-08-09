@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaCobroCarro;
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaCobroMoto;
@@ -18,6 +20,7 @@ import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
 
 @Configuration
+@EnableTransactionManagement
 public class VigilanteController {
 	
 	@Autowired
@@ -50,5 +53,6 @@ public class VigilanteController {
 		reglasCobro.add(new ReglaCobroMoto());
 		return reglasCobro;
 	}
+	
 
 }
