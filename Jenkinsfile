@@ -19,7 +19,7 @@ pipeline{
 		}
 		stage('Compile'){
 			steps{
-				 sh 'gradle --b ./build.gradle compileJava --rerun-tasks'
+				 sh 'gradle --b ./build.gradle compileJava '
 			}
 		}
 		stage('Unit Tests'){
