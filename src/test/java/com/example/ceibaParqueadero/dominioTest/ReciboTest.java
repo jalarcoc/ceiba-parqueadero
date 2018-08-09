@@ -12,7 +12,7 @@ import com.example.ceibaParqueadero.dominio.Vehiculo;
 import static org.mockito.Mockito.mock;
 
 
-public class ReciboTest {
+public class ReciboTest { 
 	Vehiculo vehiculo;
 	@Test
 	public void crearReciboIngreso() {

@@ -5,10 +5,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.example.ceibaParqueadero.CeibaParqueaderoApplication;
 import com.example.ceibaParqueadero.dominio.Carro;
 import com.example.ceibaParqueadero.dominio.Moto;
 import com.example.ceibaParqueadero.dominio.Parqueadero;
@@ -20,7 +22,8 @@ import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 
 @Import(VigilanteRest.class)
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes={CeibaParqueaderoApplication.class})
+@DataJpaTest
 public class ReglasDisponibilidadTest {
 	
 	@Autowired
@@ -54,7 +57,7 @@ public class ReglasDisponibilidadTest {
 		reglas = new ReglaDisponibilidad(repositorioRecibo);
 		try{
 			reglas.validar(vehiculo, parqueadero);
-		}catch(ParqueoException e){
+		}catch(ParqueoException e){ 
 			Assert.assertEquals("No hay capacidad para mas motos", e.getMessage());
 		}
 
