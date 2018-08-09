@@ -1,4 +1,4 @@
-package com.example.ceibaParqueadero;
+package com.example.ceibaParqueadero.dominioTest;
 
 import org.junit.Before;
 import org.junit.Test;
