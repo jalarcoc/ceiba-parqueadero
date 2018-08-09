@@ -46,7 +46,7 @@ public class VigilanteController {
 	@Bean
 	public List<ReglasCobro> anadirReglasCobro() {
 		List<ReglasCobro> reglasCobro=new ArrayList<>();
-		reglasCobro.add(new ReglaCobroCarro());
+		reglasCobro.add(new ReglaCobroCarro()); 
 		reglasCobro.add(new ReglaCobroMoto());
 		return reglasCobro;
 	}

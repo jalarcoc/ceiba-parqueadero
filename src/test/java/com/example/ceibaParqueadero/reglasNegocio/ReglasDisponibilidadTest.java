@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.ceibaParqueadero.CeibaParqueaderoApplication;
@@ -15,12 +14,10 @@ import com.example.ceibaParqueadero.dominio.Carro;
 import com.example.ceibaParqueadero.dominio.Moto;
 import com.example.ceibaParqueadero.dominio.Parqueadero;
 import com.example.ceibaParqueadero.dominio.Vehiculo;
-import com.example.ceibaParqueadero.dominio.VigilanteRest;
 import com.example.ceibaParqueadero.dominio.excepcion.ParqueoException;
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaDisponibilidad;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 
-@Import(VigilanteRest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes={CeibaParqueaderoApplication.class})
 @DataJpaTest
