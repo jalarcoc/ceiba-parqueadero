@@ -3,11 +3,8 @@ package com.example.ceibaParqueadero.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaCobroCarro;
 import com.example.ceibaParqueadero.dominio.reglasnegocio.ReglaCobroMoto;
@@ -19,14 +16,7 @@ import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
 import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
 
 @Configuration
-@EnableTransactionManagement
 public class VigilanteController {
-	
-	@Autowired
-	RepositorioRecibo repositorioRecibo ;
-	@Autowired
-	RepositorioVehiculo repositorioVehiculo;
-	 
 
 	@Bean
 	public Vigilante crearVigilante(RepositorioVehiculo repositorioVehiculo,RepositorioRecibo repositorioRecibo ){
@@ -52,6 +42,8 @@ public class VigilanteController {
 		reglasCobro.add(new ReglaCobroMoto());
 		return reglasCobro;
 	}
+	
+	
 	
 
 }

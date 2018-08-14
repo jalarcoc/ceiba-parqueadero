@@ -7,6 +7,21 @@ public class Recibo {
 	private Calendar fechaIngreso;
 	private Calendar fechaDeSalida;
 	private double total;
+	
+	public Recibo(Vehiculo vehiculo, Calendar fechaIngreso) {
+		super();
+		this.vehiculo = vehiculo;
+		this.fechaIngreso = fechaIngreso;
+	}
+
+	public Recibo(Vehiculo vehiculo, Calendar fechaIngreso, Calendar fechaDeSalida, double total) {
+		super();
+		this.vehiculo = vehiculo;
+		this.fechaIngreso = fechaIngreso;
+		this.fechaDeSalida = fechaDeSalida;
+		this.total = total;
+	}
+	
 	public Vehiculo getVehiculo() {
 		return vehiculo;
 	}
@@ -31,21 +46,6 @@ public class Recibo {
 	public void setTotal(double total) {
 		this.total = total;
 	}
-	
-	public Recibo(Vehiculo vehiculo, Calendar fechaIngreso) {
-		super();
-		this.vehiculo = vehiculo;
-		this.fechaIngreso = fechaIngreso;
 
-	}
-	public Recibo(Vehiculo vehiculo, Calendar fechaIngreso, Calendar fechaDeSalida, double total) {
-		super();
-		this.vehiculo = vehiculo;
-		this.fechaIngreso = fechaIngreso;
-		this.fechaDeSalida = fechaDeSalida;
-		this.total = total;
-	}
-	
-	
 		
 }

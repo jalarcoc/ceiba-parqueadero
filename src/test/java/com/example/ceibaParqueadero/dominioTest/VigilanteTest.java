@@ -1,7 +1,6 @@
 package com.example.ceibaParqueadero.dominioTest;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,6 @@ import com.example.ceibaParqueadero.dominio.Moto;
 import com.example.ceibaParqueadero.dominio.Recibo;
 import com.example.ceibaParqueadero.dominio.Vehiculo;
 import com.example.ceibaParqueadero.dominio.Vigilante;
-import com.example.ceibaParqueadero.dominio.repositorio.RepositorioRecibo;
-import com.example.ceibaParqueadero.dominio.repositorio.RepositorioVehiculo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes={CeibaParqueaderoApplication.class})
@@ -25,27 +22,9 @@ public class VigilanteTest {
 	
 	@Autowired
 	Vigilante vigilante;
-	@Autowired
-	RepositorioVehiculo repositorioVehiculo;
-	@Autowired
-	RepositorioRecibo repositorioRecibo;
-	
+
 	private Vehiculo vehiculo;
-	
-	@Before
-	public void limpiarDatos(){
-		repositorioRecibo.deleteAll();
-		repositorioVehiculo.deleteAll();
-		
-	}
-	
-	@Test
-	public void existeVehiculoTests(){
-		vehiculo=new Carro("FGN887");
-		Recibo recibo=vigilante.validarIngresoVehiculo(vehiculo);
-		Assert.assertNotNull(recibo);
-		Assert.assertTrue(vigilante.existeVehiculo(vehiculo.getPlaca()));
-	} 
+
 	
 	@Test
 	public void ingresarCarroTest(){
@@ -53,13 +32,21 @@ public class VigilanteTest {
 		Recibo recibo=vigilante.validarIngresoVehiculo(vehiculo);
 		Assert.assertNotNull(recibo);
 	}
-	
+
 	@Test
 	public void ingresarMotoTest(){
 		vehiculo=new Moto("FGN887",201);
 		Recibo recibo=vigilante.validarIngresoVehiculo(vehiculo);
 		Assert.assertNotNull(recibo);
 	}
+	@Test
+	public void existeVehiculoTests(){
+		vehiculo=new Carro("FGN887");
+		Recibo recibo=vigilante.validarIngresoVehiculo(vehiculo);
+		Assert.assertNotNull(recibo);
+		Assert.assertTrue(vigilante.existeVehiculo(vehiculo.getPlaca()));
+	} 
+
 	@Test
 	public void noExisteVehiculoTests(){
 		vehiculo=new Carro("FGN887");

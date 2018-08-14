@@ -1,6 +1,7 @@
 package com.example.ceibaParqueadero.dominio;
 
 public class Moto extends Vehiculo {
+	
 	private int cilindraje;
 	
 	public Moto(){
