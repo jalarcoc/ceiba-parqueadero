@@ -13,10 +13,10 @@ public final class VehiculoBuilder {
 	public static Vehiculo convertirADominio(VehiculoEntity vehiculoEntity) {
 		Vehiculo vehiculo = null;
 		if (vehiculoEntity != null) {
-			if (vehiculoEntity.getTipo().equals("carro")) {
+			if("carro".equals(vehiculoEntity.getTipo())){
 				vehiculo = new Carro(vehiculoEntity.getPlaca());
 			}
-			if (vehiculoEntity.getTipo().equals("moto")) {
+			if("moto".equals(vehiculoEntity.getTipo())) {
 				vehiculo = new Moto(vehiculoEntity.getPlaca(), vehiculoEntity.getCilindraje());
 			}
 		}
